@@ -9,6 +9,7 @@ struct Book {
     availability: bool,
 }
 
+// manage a collection of book
 #[allow(dead_code)]
 #[derive(Debug, PartialEq, Eq)]
 struct Library {

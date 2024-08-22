@@ -3,5 +3,17 @@
 version = 3
 
 [[package]]
-name = "library_management"
+name = "lib_borrowing"
+version = "0.1.0"
+
+[[package]]
+name = "lib_inventory"
+version = "0.1.0"
+
+[[package]]
+name = "lib_users"
+version = "0.1.0"
+
+[[package]]
+name = "library_app"
 version = "0.1.0"

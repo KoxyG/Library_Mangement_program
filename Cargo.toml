@@ -1,6 +1,3 @@
-[package]
-name = "library_management"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+members = ["lib_borrowing", "lib_inventory", "lib_users", "library_app"]
 
-[dependencies]
