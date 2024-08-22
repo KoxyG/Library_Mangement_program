@@ -60,18 +60,8 @@ impl Library {
     }
 
     // List books in the library
-    fn list_books(&self) {   
-        for book in &self.books {
-            let genre_str = match &book.genre {
-                Genre::Fiction => "Fiction",
-                Genre::Science => "Science",
-                Genre::Fantasy => "Fantasy",
-                Genre::Horror => "Horror",
-                Genre::Romance => "Romance",
-            };
-
-            println!("Id: {}, Title: {}, Author: {}, Genre: {}, Year: {}, Availability: {}", book.id, book.title, book.author, genre_str, book.year, book.availability);
-        }
+    fn list_books(&self) -> &Vec<Book> {   
+        &self.books
     }
 
     // Count books in the library
