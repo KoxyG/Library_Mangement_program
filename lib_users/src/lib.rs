@@ -70,7 +70,6 @@ mod test {
             borrowed_books: Vec::new(),
         };
 
-        println!("{:?}", user);
         assert_eq!(users.register_user(user.clone()), Ok(()));
         assert_eq!(users.register_user(user.clone()), Err("User with id 1 already exists".to_string()));
     }
