@@ -5,6 +5,10 @@ version = 3
 [[package]]
 name = "lib_borrowing"
 version = "0.1.0"
+dependencies = [
+ "lib_inventory",
+ "lib_users",
+]
 
 [[package]]
 name = "lib_inventory"

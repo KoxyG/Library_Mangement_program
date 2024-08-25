@@ -1,24 +1,24 @@
 #[allow(dead_code)]
-#[derive(Debug, PartialEq, Eq)]
-struct Book {
-    id: u32,
-    title: String,
-    author: String,
-    genre: Genre,
-    year: u32,
-    availability: bool,
+#[derive(Debug, PartialEq, Eq, Clone)]
+pub struct Book {
+    pub id: u32,
+    pub title: String,
+    pub author: String,
+    pub genre: Genre,
+    pub year: u32,
+    pub availability: bool,
 }
 
 // manage a collection of book
 #[allow(dead_code)]
 #[derive(Debug, PartialEq, Eq)]
-struct Library {
-    books: Vec<Book>,
+pub struct Library {
+   pub books: Vec<Book>,
 }
 
 #[allow(dead_code)]
-#[derive(Debug, PartialEq, Eq)]
-enum Genre {
+#[derive(Debug, PartialEq, Eq, Clone)]
+pub enum Genre {
     Fiction,
     Science,
     Fantasy,
@@ -29,19 +29,19 @@ enum Genre {
 #[allow(dead_code)]
 impl Library {
     // A new empty library 
-    fn new() -> Library {
+    pub fn new() -> Library {
         Library {
             books: Vec::new(),
         }
     }
 
     // Add a book to the library
-    fn add_book(&mut self, book: Book) {
+    pub fn add_book(&mut self, book: Book) {
         self.books.push(book);
     }
 
     // Remove book from the library
-    fn remove_book(&mut self, title: &str) -> Result<(), String> {   
+    pub fn remove_book(&mut self, title: &str) -> Result<(), String> {   
         match self.books.iter().position(|b| b.title == title) {
             Some(index) => {
                 self.books.remove(index);
@@ -52,7 +52,7 @@ impl Library {
     }
 
     // Find books in the library
-    fn find_books(&self, title: &str) -> Result<&Book, String> {
+    pub fn find_books(&self, title: &str) -> Result<&Book, String> {
         match self.books.iter().find(|b| b.title == title) {
             Some(book) => Ok(book),
             None => Err(format!("Book with title '{}' not found", title)),
@@ -60,12 +60,12 @@ impl Library {
     }
 
     // List books in the library
-    fn list_books(&self) -> &Vec<Book> {   
+    pub fn list_books(&self) -> &Vec<Book> {   
         &self.books
     }
 
     // Count books in the library
-    fn count_books(&self) -> usize {
+    pub fn count_books(&self) -> usize {
         self.books.len()
     }
 }

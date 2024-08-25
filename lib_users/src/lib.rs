@@ -59,6 +59,14 @@ impl LibraryUsers {
        }
     }
 
+    pub fn return_book(&mut self, id: u32, book_id: u32) {
+        if let Some(user) = self.users.iter_mut().find(|u| u.id == id) {
+            if let Some(pos) = user.borrowed_books.iter().position(|&id| id == book_id) {
+                user.borrowed_books.remove(pos);
+            }
+        }
+    }
+
 }
 
 
